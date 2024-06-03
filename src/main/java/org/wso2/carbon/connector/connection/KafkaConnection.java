@@ -62,6 +62,16 @@ public class KafkaConnection implements Connection {
                 .getProperty(KafkaConnectConstants.KAFKA_SCHEMA_REGISTRY_BASIC_AUTH_USER_INFO);
         String schemaRegistryUrl = (String) messageContext
                 .getProperty(KafkaConnectConstants.KAFKA_SCHEMA_REGISTRY_URL);
+        String schemaRegistrySslKeyPassword = (String) messageContext
+                .getProperty(KafkaConnectConstants.KAFKA_SCHEMA_REGISTRY_SSL_KEY_PASSWORD);
+        String schemaRegistrySslKeystoreLocation = (String) messageContext
+                .getProperty(KafkaConnectConstants.KAFKA_SCHEMA_REGISTRY_SSL_KEYSTORE_LOCATION);
+        String schemaRegistrySslKeystorePassword = (String) messageContext
+                .getProperty(KafkaConnectConstants.KAFKA_SCHEMA_REGISTRY_SSL_KEYSTORE_PASSWORD);
+        String schemaRegistrySslTruststoreLocation = (String) messageContext
+                .getProperty(KafkaConnectConstants.KAFKA_SCHEMA_REGISTRY_SSL_TRUSTSTORE_LOCATION);
+        String schemaRegistrySslTruststorePassword = (String) messageContext
+                .getProperty(KafkaConnectConstants.KAFKA_SCHEMA_REGISTRY_SSL_TRUSTSTORE_PASSWORD);
         String ack = (String) messageContext.getProperty(KafkaConnectConstants.KAFKA_ACKS);
         String bufferMemory = (String) messageContext.getProperty(KafkaConnectConstants.KAFKA_BUFFER_MEMORY);
         String compressionCodec = (String) messageContext
@@ -236,6 +246,26 @@ public class KafkaConnection implements Connection {
 
         if (StringUtils.isNotEmpty(sslTruststorePassword)) {
             producerConfigProperties.put(KafkaConnectConstants.SSL_TRUSTSTORE_PASSWORD, sslTruststorePassword);
+        }
+
+        if (StringUtils.isNotEmpty(schemaRegistrySslKeyPassword)) {
+            producerConfigProperties.put(KafkaConnectConstants.SCHEMA_REGISTRY_SSL_KEY_PASSWORD, schemaRegistrySslKeyPassword);
+        }
+
+        if (StringUtils.isNotEmpty(schemaRegistrySslKeystoreLocation)) {
+            producerConfigProperties.put(KafkaConnectConstants.SCHEMA_REGISTRY_SSL_KEYSTORE_LOCATION, schemaRegistrySslKeystoreLocation);
+        }
+
+        if (StringUtils.isNotEmpty(schemaRegistrySslKeystorePassword)) {
+            producerConfigProperties.put(KafkaConnectConstants.SCHEMA_REGISTRY_SSL_KEYSTORE_PASSWORD, schemaRegistrySslKeystorePassword);
+        }
+
+        if (StringUtils.isNotEmpty(schemaRegistrySslTruststoreLocation)) {
+            producerConfigProperties.put(KafkaConnectConstants.SCHEMA_REGISTRY_SSL_TRUSTSTORE_LOCATION, schemaRegistrySslTruststoreLocation);
+        }
+
+        if (StringUtils.isNotEmpty(schemaRegistrySslTruststorePassword)) {
+            producerConfigProperties.put(KafkaConnectConstants.SCHEMA_REGISTRY_SSL_TRUSTSTORE_PASSWORD, schemaRegistrySslTruststorePassword);
         }
 
         producerConfigProperties.put(KafkaConnectConstants.BATCH_SIZE, batchSize);

@@ -47,6 +47,18 @@
                ssl.keystore.location is configured."/>
     <parameter name="sslTruststoreLocation" description="The location of the trust store file."/>
     <parameter name="sslTruststorePassword" description="The password for the trust store file."/>
+    <parameter name="schemaRegistrySslKeyPassword"
+               description="The password of the private key in the key store file used for schema registry. This is optional for client."/>
+    <parameter name="schemaRegistrySslKeystoreLocation"
+               description="The location of the key store file used for schema registry. This is optional for client and can be used for two-way
+                authentication for client."/>
+    <parameter name="schemaRegistrySslKeystorePassword"
+               description="The store password for the key store file used for schema registry. This is optional for client and only needed if
+               schemaRegistrySslKeystoreLocation is configured."/>
+    <parameter name="schemaRegistrySslTruststoreLocation"
+               description="The location of the trust store file used for schema registry."/>
+    <parameter name="schemaRegistrySslTruststorePassword"
+               description="The password for the trust store file used for schema registry."/>
     <parameter name="batchSize"
                description="The producer will attempt to batch records together into fewer requests whenever multiple
                records are being sent to the same partition"/>
@@ -179,6 +191,11 @@
         <property expression="$func:sslKeystorePassword" name="kafka.sslKeystorePassword"/>
         <property expression="$func:sslTruststoreLocation" name="kafka.sslTruststoreLocation"/>
         <property expression="$func:sslTruststorePassword" name="kafka.sslTruststorePassword"/>
+        <property expression="$func:schemaRegistrySslKeyPassword" name="kafka.schemaRegistry.sslKeyPassword"/>
+        <property expression="$func:schemaRegistrySslKeystoreLocation" name="kafka.schemaRegistry.sslKeystoreLocation"/>
+        <property expression="$func:schemaRegistrySslKeystorePassword" name="kafka.schemaRegistry.sslKeystorePassword"/>
+        <property expression="$func:schemaRegistrySslTruststoreLocation" name="kafka.schemaRegistry.sslTruststoreLocation"/>
+        <property expression="$func:schemaRegistrySslTruststorePassword" name="kafka.schemaRegistry.sslTruststorePassword"/>
         <property expression="$func:batchSize" name="kafka.batchSize"/>
         <property expression="$func:clientId" name="kafka.clientId"/>
         <property expression="$func:connectionsMaxIdleTime" name="kafka.connectionsMaxIdleTime"/>

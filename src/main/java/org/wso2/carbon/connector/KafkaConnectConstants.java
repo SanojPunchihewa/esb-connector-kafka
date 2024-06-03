@@ -87,6 +87,11 @@ public class KafkaConnectConstants {
     public static final String SSL_TRUSTMANAGER_ALGORITHM = "ssl.trustmanager.algorithm";
     // Confluence schema registry url
     public static final String SCHEMA_REGISTRY_URL = "schema.registry.url";
+    public static final String SCHEMA_REGISTRY_SSL_KEY_PASSWORD = "schema.registry.ssl.key.password";
+    public static final String SCHEMA_REGISTRY_SSL_KEYSTORE_LOCATION = "schema.registry.ssl.keystore.location";
+    public static final String SCHEMA_REGISTRY_SSL_KEYSTORE_PASSWORD = "schema.registry.ssl.keystore.password";
+    public static final String SCHEMA_REGISTRY_SSL_TRUSTSTORE_LOCATION = "schema.registry.ssl.truststore.location";
+    public static final String SCHEMA_REGISTRY_SSL_TRUSTSTORE_PASSWORD = "schema.registry.ssl.truststore.password";
 
     // Configuration properties parameter
     public static final String PARAM_TOPIC = "topic";
@@ -203,6 +208,11 @@ public class KafkaConnectConstants {
 
     // Avro message constants
     public static final String KAFKA_SCHEMA_REGISTRY_URL = "kafka.schemaRegistryUrl";
+    public static final String KAFKA_SCHEMA_REGISTRY_SSL_KEY_PASSWORD = "kafka.schemaRegistry.sslKeyPassword";
+    public static final String KAFKA_SCHEMA_REGISTRY_SSL_KEYSTORE_LOCATION = "kafka.schemaRegistry.sslKeystoreLocation";
+    public static final String KAFKA_SCHEMA_REGISTRY_SSL_KEYSTORE_PASSWORD = "kafka.schemaRegistry.sslKeystorePassword";
+    public static final String KAFKA_SCHEMA_REGISTRY_SSL_TRUSTSTORE_LOCATION = "kafka.schemaRegistry.sslTruststoreLocation";
+    public static final String KAFKA_SCHEMA_REGISTRY_SSL_TRUSTSTORE_PASSWORD = "kafka.schemaRegistry.sslTruststorePassword";
     public static final String KAFKA_SCHEMA_REGISTRY_BASIC_AUTH_CREDENTIALS_SOURCE = "kafka.basicAuthCredentialsSource";
     public static final String KAFKA_SCHEMA_REGISTRY_BASIC_AUTH_USER_INFO = "kafka.basicAuthUserInfo";
     public static final String KAFKA_KEY_SCHEMA_ID = "keySchemaId";
